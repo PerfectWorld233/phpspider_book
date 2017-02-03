@@ -15,6 +15,8 @@ require '../core/init.php';
 //echo "Server is running: " . $redis->ping();
 
 
+require 'vendor/autoload.php';
+
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\FirePHPHandler;
