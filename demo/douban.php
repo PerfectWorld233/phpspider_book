@@ -6,9 +6,9 @@
  * Time: 21:07
  */
 
-use Monolog\Logger;
-use Monolog\Handler\StreamHandler;
-use Monolog\Handler\FirePHPHandler;
+use Logger;
+use StreamHandler;
+use FirePHPHandler;
 
 /*require '../core/init.php';
 $redis = new Redis();
