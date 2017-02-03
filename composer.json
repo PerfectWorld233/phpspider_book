@@ -1,6 +1,7 @@
 {
   "require": {
-    "monolog/monolog":"1.2.*"
+    "monolog/monolog":"1.2.*",
+    "minimum-stability": "stable"
 
   }
 }
