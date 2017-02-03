@@ -6,17 +6,18 @@
  * Time: 21:07
  */
 
-use Logger;
-use StreamHandler;
-use FirePHPHandler;
 
-/*require '../core/init.php';
+require '../core/init.php';
 $redis = new Redis();
 $redis->connect('127.0.0.1', 6379);
 echo "Connection to server sucessfully";
 //check whether server is running or not
-echo "Server is running: " . $redis->ping();*/
+echo "Server is running: " . $redis->ping();
 
+
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+use Monolog\Handler\FirePHPHandler;
 
 // Create the logger
 $logger = new Logger('my_logger');
