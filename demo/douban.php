@@ -8,12 +8,12 @@
 
 
 require '../core/init.php';
-//$redis = new Redis();
-//$redis->connect('127.0.0.1', 6379);
-//echo "Connection to server sucessfully";
-////check whether server is running or not
-//echo "Server is running: " . $redis->ping();
-
+$redis = new Redis();
+$redis->connect('127.0.0.1', 6379);
+echo "Connection to server sucessfully";
+//check whether server is running or not
+echo "Server is running: " . $redis->ping();
+die;
 
 require 'vendor/autoload.php';
 
