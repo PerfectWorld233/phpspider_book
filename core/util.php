@@ -42,6 +42,39 @@ class util
         return $array;
     }
 
+
+//outputCsv($requestList, "list-{$now}");
+
+    //将数据输出为csv
+
+    function outputCsv($data, $filename)
+    {
+        if($data==false || count($data)==0)
+        {
+            echo 'no_data';
+            exit;
+        }
+        header('Content-Type: text/csv; charset=UTF-8');
+        header("Content-Disposition: attachment; filename={$filename}.csv");
+        header('Cache-Control:must-revalidate,post-check=0,pre-check=0');
+        header('Expires:0');
+        header('Pragma:public');
+        ob_start();
+        $fp = fopen( 'php://output', 'w' ) or die( 'error_on_generate_file') ;
+        // 输出CSV头信息
+        fputcsv($fp, array_keys(reset($data)));
+        // 输出CSV数据
+        foreach ($data as $dataRow){
+            fputcsv($fp, array_values($dataRow));
+        }
+        @fclose($fp);
+        $output = ob_get_contents();
+        ob_end_clean();
+        echo "\xEF\xBB\xBF" . $output;
+    }
+
 }
+
+
 
 
